@@ -10,7 +10,7 @@ namespace TUI.Files.Service.Adapter
 {
     public class DataEncryptorAdapter : IDataEncryptor
     {
-        private TuiCustomDataEncryptor dataEncryptor = new TuiCustomDataEncryptor();
+        private readonly TuiCustomDataEncryptor dataEncryptor = new TuiCustomDataEncryptor();
 
         public string Encrypt(string plainText, params object[] paramaters)
         {

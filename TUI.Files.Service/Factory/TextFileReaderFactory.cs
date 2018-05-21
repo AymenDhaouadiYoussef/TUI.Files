@@ -11,7 +11,7 @@ namespace TUI.Files.Service.Factory
 {
     public class TextFileReaderFactory : IFileReaderFactory
     {
-        public IFileReaderStrategy CreateFileReader(bool useEncryptionSystem = false)
+        public IFileReaderStrategy CreateFileReader(bool useEncryptionSystem = false, bool useRoleBasedSecurity = false, string roleName = null)
         {
             IDataEncryptor dataEncryptor = null;
             if (useEncryptionSystem)

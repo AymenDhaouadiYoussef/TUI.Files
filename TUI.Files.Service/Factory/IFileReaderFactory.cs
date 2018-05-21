@@ -9,6 +9,6 @@ namespace TUI.Files.Service.Factory
 {
     public interface IFileReaderFactory
     {
-        IFileReaderStrategy CreateFileReader(bool useEncryptionSystem = false);
+        IFileReaderStrategy CreateFileReader(bool useEncryptionSystem = false, bool useRoleBasedSecurity = false, string roleName = null);
     }
 }
