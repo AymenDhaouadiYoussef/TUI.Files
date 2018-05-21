@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using TUI.Files.Service.Adapter;
 using TUI.Files.Service.Encryption;
+using TUI.Files.Service.Security;
 using TUI.Files.Service.Strategy;
 
 namespace TUI.Files.Service.Factory
@@ -16,7 +17,12 @@ namespace TUI.Files.Service.Factory
             IDataEncryptor dataEncryptor = null;
             if (useEncryptionSystem)
                 dataEncryptor = new DataEncryptorAdapter();
-            return new TextFileReaderStrategy(useEncryptionSystem, dataEncryptor);
+
+            IFileSecurity fileSecurity = null;
+            if (useRoleBasedSecurity)
+                fileSecurity = new FileSecurityAdapter();
+
+            return new TextFileReaderStrategy(useEncryptionSystem, dataEncryptor, useRoleBasedSecurity, roleName, fileSecurity);
         }
     }
 }
