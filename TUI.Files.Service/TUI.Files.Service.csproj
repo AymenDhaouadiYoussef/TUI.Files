@@ -42,10 +42,12 @@
   <ItemGroup>
     <Compile Include="Factory\IFileReaderFactory.cs" />
     <Compile Include="Factory\TextFileReaderFactory.cs" />
+    <Compile Include="Factory\XmlFileReaderFactory.cs" />
     <Compile Include="Models\FileData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Strategy\IFileReaderStrategy.cs" />
     <Compile Include="Strategy\TextFileReaderStrategy.cs" />
+    <Compile Include="Strategy\XmlFileReaderStrategy.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
