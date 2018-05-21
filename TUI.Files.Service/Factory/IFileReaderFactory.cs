@@ -9,6 +9,6 @@ namespace TUI.Files.Service.Factory
 {
     public interface IFileReaderFactory
     {
-        IFileReaderStrategy CreateFileReader();
+        IFileReaderStrategy CreateFileReader(bool useEncryptionSystem = false);
     }
 }

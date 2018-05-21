@@ -3,15 +3,20 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TUI.Files.Service.Adapter;
+using TUI.Files.Service.Encryption;
 using TUI.Files.Service.Strategy;
 
 namespace TUI.Files.Service.Factory
 {
     public class TextFileReaderFactory : IFileReaderFactory
     {
-        public IFileReaderStrategy CreateFileReader()
+        public IFileReaderStrategy CreateFileReader(bool useEncryptionSystem = false)
         {
-            return new TextFileReaderStrategy();
+            IDataEncryptor dataEncryptor = null;
+            if (useEncryptionSystem)
+                dataEncryptor = new DataEncryptorAdapter();
+            return new TextFileReaderStrategy(useEncryptionSystem, dataEncryptor);
         }
     }
 }

@@ -9,7 +9,7 @@ namespace TUI.Files.Service.Factory
 {
     public class XmlFileReaderFactory : IFileReaderFactory
     {
-        public IFileReaderStrategy CreateFileReader()
+        public IFileReaderStrategy CreateFileReader(bool useEncryptionSystem = false)
         {
             return new XmlFileReaderStrategy();
         }
