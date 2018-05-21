@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("TUI.Files.Encryption")]
+[assembly: AssemblyTitle("TUI.Files.Application")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("TUI.Files.Encryption")]
+[assembly: AssemblyProduct("TUI.Files.Application")]
 [assembly: AssemblyCopyright("Copyright ©  2018")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("e30a9f7f-adb9-4acd-8b4d-24189f375bf6")]
+[assembly: Guid("a8e1d94e-4dad-4d2a-ac16-63f8c95f566f")]
 
 // Version information for an assembly consists of the following four values:
 //

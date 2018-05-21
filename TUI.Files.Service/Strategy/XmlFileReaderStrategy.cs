@@ -18,7 +18,7 @@ namespace TUI.Files.Service.Strategy
         private readonly string roleName;
         private readonly IFileSecurity fileSecurity;
 
-        public XmlFileReaderStrategy(bool useEncryptionSystem = false, IDataEncryptor dataEncryptor = null,
+        public XmlFileReaderStrategy(bool useEncryptionSystem = false, IDataEncryptor dataEncryptor = null, 
             bool useRoleBasedSecurity = false, string roleName = null, IFileSecurity fileSecurity = null)
         {
             this.useEncryptionSystem = useEncryptionSystem;
@@ -46,8 +46,8 @@ namespace TUI.Files.Service.Strategy
             string fileContent;
             foreach (FileInfo file in directoryInfo.EnumerateFiles("*.xml", SearchOption.AllDirectories))
             {
-                if (useRoleBasedSecurity &&
-                    !roleFeatures.Item1 &&
+                if(useRoleBasedSecurity && 
+                    !roleFeatures.Item1 && 
                     !dctPermissions.ContainsKey(file.FullName))
                     continue;
 
