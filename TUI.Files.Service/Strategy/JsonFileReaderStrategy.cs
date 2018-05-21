@@ -4,12 +4,22 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TUI.Files.Service.Encryption;
 using TUI.Files.Service.Models;
 
 namespace TUI.Files.Service.Strategy
 {
     public class JsonFileReaderStrategy : IFileReaderStrategy
     {
+        private readonly bool useEncryptionSystem;
+        private readonly IDataEncryptor dataEncryptor;
+
+        public JsonFileReaderStrategy(bool useEncryptionSystem = false, IDataEncryptor dataEncryptor = null)
+        {
+            this.useEncryptionSystem = useEncryptionSystem;
+            this.dataEncryptor = dataEncryptor;
+        }
+
         public IEnumerable<FileData> ReadFile(string directoryPath)
         {
             DirectoryInfo directoryInfo = new DirectoryInfo(directoryPath);
@@ -21,7 +31,7 @@ namespace TUI.Files.Service.Strategy
                 fileDataCollection.Add(new FileData
                 {
                     Name = file.Name,
-                    Content = fileContent
+                    Content = useEncryptionSystem ? dataEncryptor.Decrypt(fileContent) : fileContent
                 });
             }
 
